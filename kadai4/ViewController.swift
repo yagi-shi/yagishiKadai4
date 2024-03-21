@@ -8,21 +8,23 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var label: UILabel!
-    
+
+    var count = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = String(0)
+        label.text = String(count)
     }
-    
+
     @IBAction func countUp(_ sender: Any) {
-        var labelText = Int(label.text ?? "") ?? 0
-        let result = labelText + 1
-        label.text = String(result)
+        count += 1
+        label.text = String(count)
     }
-    
+
     @IBAction func resetValue(_ sender: Any) {
-        label.text = String(0)
+        count = 0
+        label.text = String(count)
     }
 }
